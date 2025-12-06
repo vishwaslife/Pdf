@@ -1,37 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Advanced PDF Editor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF MASTER PRO — 100+ Features</title>
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css">
 
     <!-- PDF.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
 </head>
-
 <body>
-    <header class="topbar">
-        <h2>PDF Editor Pro</h2>
-        <div class="controls">
-            <input type="file" id="upload" accept="application/pdf" />
-            <button onclick="zoomIn()">Zoom +</button>
-            <button onclick="zoomOut()">Zoom -</button>
-            <button onclick="enableTextTool()">Add Text</button>
-        </div>
-    </header>
 
-    <div class="workspace">
-        <aside class="sidebar" id="thumbs"></aside>
+<header class="topbar">
+    <h2>PDF MASTER PRO</h2>
 
-        <main class="viewer">
-            <div id="pdf-container"></div>
-        </main>
+    <div class="menu">
+        <button onclick="openPanel('viewerPanel')">Viewer</button>
+        <button onclick="openPanel('editPanel')">Edit</button>
+        <button onclick="openPanel('pagesPanel')">Pages</button>
+        <button onclick="openPanel('convertPanel')">Convert</button>
+        <button onclick="openPanel('securityPanel')">Security</button>
+        <button onclick="openPanel('ocrPanel')">OCR</button>
+        <button onclick="openPanel('aiPanel')">AI Tools</button>
     </div>
 
-    <script src="script.js"></script>
-</body>
+    <input type="file" id="upload" accept="application/pdf">
+</header>
 
+<!-- SIDEBAR PANELS -->
+<div id="viewerPanel" class="sidepanel"></div>
+<div id="editPanel" class="sidepanel"></div>
+<div id="pagesPanel" class="sidepanel"></div>
+<div id="convertPanel" class="sidepanel"></div>
+<div id="securityPanel" class="sidepanel"></div>
+<div id="ocrPanel" class="sidepanel"></div>
+<div id="aiPanel" class="sidepanel"></div>
+
+<!-- PDF VIEW -->
+<main class="workspace">
+    <aside id="thumbnails" class="sidebar"></aside>
+    <section id="pdf-container" class="viewer"></section>
+</main>
+
+<script src="app.js"></script>
+</body>
 </html>
