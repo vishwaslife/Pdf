@@ -1,74 +1,77 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #1f1f1f;
-    color: #fff;
+    font-family: Arial;
+    background: #1a1a1a;
+    color: white;
 }
 
+/* Topbar */
 .topbar {
-    background: #292929;
-    padding: 15px;
+    background: #222;
+    padding: 12px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid #444;
+    justify-content: space-between;
+    border-bottom: 2px solid #333;
 }
 
-.controls button,
-.controls input {
+.menu button {
+    margin-left: 8px;
     padding: 8px 14px;
-    margin-left: 5px;
-    background: #444;
-    color: #fff;
+    background: #333;
+    color: white;
     border: none;
-    cursor: pointer;
     border-radius: 6px;
+    cursor: pointer;
 }
 
-.controls button:hover {
-    background: #666;
+.menu button:hover {
+    background: #555;
 }
 
+/* Panels */
+.sidepanel {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 260px;
+    bottom: 0;
+    background: #2a2a2a;
+    padding: 15px;
+    overflow-y: auto;
+    display: none;
+    border-right: 2px solid #444;
+}
+
+/* Workspace */
 .workspace {
+    margin-left: 0;
     display: flex;
-    height: calc(100vh - 70px);
 }
 
 .sidebar {
-    width: 170px;
-    background: #2b2b2b;
+    width: 180px;
+    background: #222;
     padding: 10px;
-    overflow-y: auto;
     border-right: 2px solid #333;
-}
-
-.sidebar canvas {
-    width: 100%;
-    margin-bottom: 12px;
-    border-radius: 6px;
-    transition: transform 0.3s ease;
-}
-
-.sidebar canvas:hover {
-    transform: scale(1.05);
+    overflow-y: auto;
 }
 
 .viewer {
     flex-grow: 1;
-    overflow-y: auto;
-    text-align: center;
     padding: 20px;
+    text-align: center;
+    overflow-y: auto;
 }
 
-#pdf-container canvas {
+canvas {
     width: 70%;
     margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 0px 0px 20px #000;
     animation: fadeIn 0.5s ease;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
 }
